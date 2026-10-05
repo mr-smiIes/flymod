@@ -1,6 +1,6 @@
 plugins {
-    id "net.fabricmc.fabric-loom"
-    id "maven-publish"
+    id 'net.fabricmc.fabric-loom' version "${loom_version}"
+    id 'maven-publish'
 }
 
 version = project.mod_version
@@ -42,7 +42,6 @@ processResources {
 
 tasks.withType(JavaCompile).configureEach {
     it.options.release = 25
-    it.options.encoding = "UTF-8"
 }
 
 java {
@@ -52,10 +51,12 @@ java {
 }
 
 jar {
-    inputs.property "archivesName", project.base.archivesName
+    def projectName = project.name
+
+    inputs.property "projectName", projectName
 
     from("LICENSE") {
-        rename { "${it}_${project.base.archivesName.get()}" }
+        rename { "${it}_${projectName}" }
     }
 }
 

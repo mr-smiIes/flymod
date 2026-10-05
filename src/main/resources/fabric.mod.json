@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "flymod",
+  "version": "${version}",
+  "name": "Fly Mod",
+  "description": "Client-side free flight toggled with G.",
+  "authors": [
+    "wacky man"
+  ],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.wackyman.flymod.client.FlyModClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~26.3",
+    "fabric-api": "*"
+  }
+}
